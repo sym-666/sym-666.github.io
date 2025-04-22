@@ -1,0 +1,147 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+mainpart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 0;
+  background-color: rgb(160, 190, 207);
+}
+container {
+  background-color: aliceblue;
+  height: 400px;
+  width: 500px; /* 默认宽度 */
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  background-color: rgb(218, 237, 248);
+  border-radius: 10px;
+}
+.right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+.right .counter {
+  margin-bottom: 10px;
+  flex-basis: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.right .task-list {
+  display: flex;
+  flex-direction: column; /* 确保任务项垂直排列 */
+  gap: 10px; /* 添加任务项之间的间距 */
+  flex-grow: 1;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+.right .task-list::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+.task-item {
+  font-size: 20px;
+  line-height: 40px;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    margin 0.5s ease; 
+  display: flex;
+}
+.change {
+  margin-right: 0%;
+}
+input.edit-input {
+  border: none; 
+  border-bottom: 2px solid grey; 
+  outline: none; 
+  line-height: 40px;
+  font-size: 20px; 
+  width: 100%;
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  margin-right: 10px; 
+}
+
+input:focus {
+  border-bottom: 2px solid rgb(160, 190, 207); /* 聚焦时下边框颜色变化 */
+}
+p.content {
+  flex-grow: 1;
+  border-bottom: 1px solid grey;
+}
+.edit {
+  flex-grow: 1;
+}
+
+button.change {
+  background-color: rgb(160, 190, 207); 
+  color: white; 
+  font-size: 16px; 
+  font-weight: bold; 
+  height: 30px;
+  padding: 5px 10px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+button.change:hover {
+  background-color: rgb(120, 160, 190);
+  transform: scale(1.05);
+}
+
+button.change:active {
+  background-color: rgb(100, 140, 170);
+  transform: scale(0.95);
+}
+.done {
+  text-decoration: line-through;
+  font-style: italic;
+}
+.task-item.deleting {
+  opacity: 0;
+  transform: translateY(-20px);
+  transform: translateX(40px);
+  margin-bottom: -60px;
+}
+@media screen {
+}
+
+
+@media screen and (max-width: 768px) {
+  container {
+    width: 90%; 
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  container {
+    width: 95%; 
+    height: 50%;
+  }
+  .counter
+  {
+    font-size: 10px;
+  }
+
+}
